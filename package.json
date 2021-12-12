@@ -1,11 +1,17 @@
 {
   "name": "i18n",
   "private": true,
+  "main": "dist/server/index.js",
+  "engines": {
+      "node": "16.13"
+  },
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:client": "next src/client",
+    "dev:server": "babel src/server --out-dir dist/server --source-maps --watch",
+    "dev": "npm run dev:client & npm run dev:server"
   },
   "dependencies": {
     "firebase-admin": "^10.0.0",
